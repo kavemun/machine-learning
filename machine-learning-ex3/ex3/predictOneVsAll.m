@@ -32,7 +32,11 @@ X = [ones(m, 1) X];
 
 
 
-
+for i = 1:m
+    sum_x = sum( (repmat(X(i,:),num_labels,1) .* all_theta),2);
+    [val, index] = max(sum_x);
+    p(i) = index;
+end
 
 
 
