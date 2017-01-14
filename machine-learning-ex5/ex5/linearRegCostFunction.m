@@ -20,14 +20,12 @@ grad = zeros(size(theta));
 %
 
 
+% 1.2 Regularized linear regression cost function
+theta0 = [0; theta(2:end)];
+J = (1 /(2*m)) * (sum((X*theta-y).^2) + lambda *theta0' * theta0);
 
-
-
-
-
-
-
-
+% 1.3 Regularized linear regression gradient
+grad = (1/m) * (X'*(X*theta-y) + lambda*theta0);
 
 
 % =========================================================================
@@ -35,3 +33,8 @@ grad = zeros(size(theta));
 grad = grad(:);
 
 end
+
+
+
+
+
